@@ -32,21 +32,22 @@ struct Photo: Codable {
     }
 }
 
-extension Photo{
-    
-    var buddyIconUrl: String?{
+extension Photo {
+    var buddyIconUrl: String? {
         if let iconserver = iconserver,
            let iconfarm = iconfarm,
            let nsid = owner,
-           NSString(string: iconserver).intValue > 0 {
+           NSString(string: iconserver).intValue > 0
+        {
             return "http://farm\(iconfarm).staticflickr.com/\(iconserver)/buddyicons/\(nsid).jpg"
-        }else{
+        } else {
             return "https://www.flickr.com/images/buddyicon.gif"
         }
     }
 }
 
 // MARK: - Description
+
 struct Description: Codable {
     let content: String?
 

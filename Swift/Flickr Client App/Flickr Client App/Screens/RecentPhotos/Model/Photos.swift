@@ -13,4 +13,3 @@ struct Photos: Codable {
     let total: Int?
     let photo: [Photo]?
 }
-

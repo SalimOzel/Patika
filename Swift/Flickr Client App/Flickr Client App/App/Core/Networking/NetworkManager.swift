@@ -7,13 +7,13 @@
 
 import Foundation
 
-class NetworkManager{
+class NetworkManager {
     static let shared = NetworkManager()
-    
-     func fetchImage(with url: String?, completion: @escaping (Data) -> Void) {
+
+    func fetchImage(with url: String?, completion: @escaping (Data) -> Void) {
         if let urlString = url, let url = URL(string: urlString) {
             let request = URLRequest(url: url)
-            URLSession.shared.dataTask(with: request) { data, response, error in
+            URLSession.shared.dataTask(with: request) { data, _, error in
                 if let error = error {
                     debugPrint(error)
                     return
@@ -26,5 +26,4 @@ class NetworkManager{
             }.resume()
         }
     }
-
 }

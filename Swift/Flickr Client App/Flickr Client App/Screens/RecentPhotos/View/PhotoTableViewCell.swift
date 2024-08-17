@@ -8,13 +8,11 @@
 import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
+    @IBOutlet var ownerImageView: UIImageView!
+    @IBOutlet var ownerNameLabel: UILabel!
+    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
 
-    
-    @IBOutlet weak var ownerImageView: UIImageView!
-    @IBOutlet weak var ownerNameLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         ownerImageView.layer.cornerRadius = 24.0
@@ -26,5 +24,4 @@ class PhotoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

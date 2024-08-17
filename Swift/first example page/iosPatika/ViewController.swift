@@ -8,25 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var activityIndıcatorView:  UIActivityIndicatorView!
-    @IBOutlet weak var usernameErrorLabel: UILabel!
-    @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var activityIndıcatorView: UIActivityIndicatorView!
+    @IBOutlet var usernameErrorLabel: UILabel!
+    @IBOutlet var passwordErrorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     let correctUsername = "Salim"
     let correctPassword = "12345"
 
-    
-
-    @IBAction func Giriş(_ sender: UIButton) {
+    @IBAction func Giriş(_: UIButton) {
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        
+
         let isCredentialsValid = validateCredentials(username: username, password: password)
 
         if username.isEmpty || password.isEmpty || !isCredentialsValid {
@@ -42,4 +39,4 @@ class ViewController: UIViewController {
     func validateCredentials(username: String, password: String) -> Bool {
         return username == correctUsername && password == correctPassword
     }
-     }
+}
